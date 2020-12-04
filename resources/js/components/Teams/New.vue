@@ -45,7 +45,6 @@
 
 <script>
 
-// import the styles
 import '@riophae/vue-treeselect/dist/vue-treeselect.css'
     export default {
         name:'new',

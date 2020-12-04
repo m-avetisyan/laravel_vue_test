@@ -13,7 +13,7 @@ class Player extends Model
 
     public function team()
     {
-        return $this->belongsTo(Team::class,'team_id');
+        return $this->belongsTo(Team::class);
     }
 
 }

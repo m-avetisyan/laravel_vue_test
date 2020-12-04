@@ -20,10 +20,10 @@
                         <router-link to="/users" class="nav-link">All Users</router-link>
                       </li>
                         <li>
-                            <router-link to="/team" class="nav-link"> All Teams</router-link>
+                            <router-link to="/team" class="nav-link"> My Teams</router-link>
                         </li>
                         <li>
-                            <router-link to="/player" class="nav-link">All Players</router-link>
+                            <router-link to="/player" class="nav-link">My Players</router-link>
                         </li>
                         <li class="nav-item dropdown">
                             <a id="navdrop" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true">

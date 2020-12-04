@@ -12,32 +12,31 @@
             </div>
             <table class="table">
                 <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Description</th>
-                    <th>Team</th>
-                    <th colspan="3">Actions</th>
-                </tr>
+                  <tr>
+                      <th>ID</th>
+                      <th>Name</th>
+                      <th>Description</th>
+                      <th>Team</th>
+                      <th colspan="3">Actions</th>
+                  </tr>
                 </thead>
-
-            <tbody>
-                <tr v-for="(player,index) in players" :key="index">
-                    <td>{{ player.id}}</td>
-                    <td>{{ player.name }}</td>
-                    <td>{{ player.description}}</td>
-                    <td>{{ player.team.name}}</td>
-                    <td>
-                        <router-link :to="`/player/${player.id}`">Show</router-link>
-                    </td>
-                    <td>
-                        <router-link :to="`/player/${player.id}/edit`">Edit</router-link>
-                    </td>
-                    <td>
-                         <input type="submit" value="Delete"  @click="deletePlayer(player.id,index)" class="btn btn-danger"/>
-                    </td>
-                </tr>
-            </tbody>
+                <tbody>
+                    <tr v-for="(item,index) in players" :key="index">
+                        <td>{{ item.id}}</td>
+                        <td>{{ item.name }}</td>
+                        <td>{{ item.description}}</td>
+                        <td>{{ item.team.name}}</td>
+                        <td>
+                            <router-link :to="`/player/${item.id}`">Show</router-link>
+                        </td>
+                        <td>
+                            <router-link :to="`/player/${item.id}/edit`">Edit</router-link>
+                        </td>
+                        <td>
+                             <input type="submit" value="Delete"  @click="deletePlayer(item.id,index)" class="btn btn-danger"/>
+                        </td>
+                    </tr>
+                </tbody>
         </table>
         </template>
         <template v-else>
@@ -55,6 +54,7 @@
         if (this.players.length) {
           return;
         }
+
         this.$store.dispatch('getPlayers');
       },
         data() {
@@ -66,9 +66,10 @@
             currentUser(){
                 return this.$store.getters.currentUser;
             },
-            players(){
-                return this.$store.getters.players;
-            }
+          players(){
+            return this.$store.getters.players;
+          }
+
         },
         methods:{
           deletePlayer(id,index){

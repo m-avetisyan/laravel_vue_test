@@ -39,7 +39,6 @@
                 })
                 .then((response) => {
                     this.player = response.data.data;
-                    console.log(this.player.team.name,'Player Data');
                 });
         },
         computed: {
